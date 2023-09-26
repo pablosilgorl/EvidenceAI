@@ -106,7 +106,7 @@ def process_data():
     locations_by_date.clear()
     for year in  [2022,2023]:
         for month in MONTHS:
-            json_file_path = 'maps\\'+str(year)+'\\'+str(year)+'_'+month+'.json'
+            json_file_path = 'maps/'+str(year)+'/'+str(year)+'_'+month+'.json'
             try:
                 with open(json_file_path, 'r', encoding = 'utf-8') as json_file:
                     data = json.load(json_file)
@@ -133,5 +133,3 @@ def process_data():
                 total_seconds = 0
             except FileNotFoundError:
                 print(f"File '{json_file_path}' not found.")
-
-process_data()
