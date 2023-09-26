@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOU</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div id="calendar-container">
+        <h1>
+            <button onclick="previousMonth()">◀</button>
+            <span id="current-year"></span> <span id="current-month"></span>
+            <button onclick="nextMonth()">▶</button>
+            <form id="form-chat" role="search">
+                <input type="search" id="keyword" name="q" placeholder="Buscar palabra...">
+                <button id="search-button-chat">🔎</button>
+            </form>
+            <form id="form-map" role="search">
+                <input type="search" id="city" name="q" placeholder="Buscar ciudad...">
+                <button id="search-button-city">📍</button>
+            </form>
+        </h1>
+        <table id="calendar">
+            <thead>
+                <tr>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+                {% for week in calendar_data %}
+                    <tr>
+                        {% for day in week %}
+                            <td onclick="showMessagesForDate('{{ year }}', '{{ month }}', '{{ day }}')">{{ day }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="grid-container">
+        <div class="column" id="photo-container"></div>
+        <div class="column" id="message-container"></div>
+        <div class="column" id="locations-container"></div>
+    </div>
+</body>
+</html>

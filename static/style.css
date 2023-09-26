@@ -1,0 +1,127 @@
+.video {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+.photo {
+    max-width: 300px; /* Set the width to one-third of the container width */
+    height: auto; /* Maintain the aspect ratio */
+} 
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 48%;
+  border: 1px solid gray;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Style for the search input */
+#keyword {
+    border: none;
+    padding: 5px;
+    flex: 1;
+}
+/* Style for the search button */
+button {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#display-date{
+	position: sticky;
+	
+}
+
+
+/* Hover effect for the search button */
+#search-button:hover {
+    background-color: #0056b3;
+}
+.messages-low {
+    background-color: lightgreen;
+}
+
+.messages-medium {
+    background-color: yellow;
+}
+
+.messages-high {
+    background-color: orange;
+}
+
+.messages-very-high {
+    background-color: red;
+}
+
+body, h1, table {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #4285F4;
+    color: white;
+}
+
+#calendar {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid white;
+    background-color: white;
+}
+
+#calendar th, #calendar td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+#calendar th {
+    background-color: #4285F4;
+    color: white;
+}
+
+#calendar td {
+    cursor: pointer;
+}
+
+#calendar td:hover {
+    background-color: #f2f2f2;
+}
+
+#calendar-container {
+    position: sticky;
+    top: 0; /* Adjust this value based on your layout */
+    z-index: 100; /* Adjust the z-index if needed */
+    background-color: #fff; /* Change to the background color you prefer */
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #calendar {
+        width: 100%;
+    }
+}
