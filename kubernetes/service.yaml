@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: evidence-app-svc
+spec:
+  type: NodePort
+  selector:
+    app: evidence-app
+  ports:
+    - protocol: "TCP"
+      port: 5000
+      targetPort: 5000

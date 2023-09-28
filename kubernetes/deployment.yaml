@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: evidence-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: evidence-app
+  template:
+    metadata:
+      labels:
+        app: evidence-app
+    spec:
+      containers:
+        - name: evidence-app-container
+          image: evidence-app:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+            - name: app-volume
+              mountPath: /app
+      volumes:
+        - name: app-volume
+          hostPath:
+            path: /media/pablo/UUI/Ubuntu/docker
